@@ -61,7 +61,6 @@ class mlp(nn.Module):
 ```
 4.	实例化模型，定义SGD优化器，设置学习率为0.01:
 ```python
-
 model = mlp().to(device)
 optimizer = optim.SGD(model.parameters(), lr=0.01)
 print(model)
@@ -100,9 +99,9 @@ for epoch in range(epochs):
     print(f'epoch:{epoch:2d}, test_loss:{test_loss:.4f}, test_acc:{acc:.4f}')
 ```
 
-
 ## 三、实验结果与分析
-1. 训练集shape输出：torch.Size([60000, 28, 28])
+1. 训练集shape输出
+
 `训练集数据shape: torch.Size([60000, 28, 28])`
 
 2. 模型结构输出两层全连接网络；
@@ -110,7 +109,8 @@ for epoch in range(epochs):
 mlp(
   (l1): Linear(in_features=784, out_features=128, bias=True)
   (l2): Linear(in_features=128, out_features=10, bias=True)
-)```
+)
+```
 
 3. 训练过程中，随着epoch增加，测试损失逐步下降，测试准确率逐步上升。
 ```python
